@@ -108,7 +108,7 @@ main() {
         PIP_CMD="pip"
     fi
 
-    print_success "All prerequisites met!"
+    echo "All prerequisites met!"
 
     # Create .env file if it doesn't exist
     print_status "Setting up environment configuration..."
@@ -116,7 +116,7 @@ main() {
         if [ -f ".env.example" ]; then
             cp .env.example .env
             print_warning "Created .env file from template"
-            print_warning "⚠️  IMPORTANT: Edit .env and add your Gemini API key!"
+            print_warning "IMPORTANT: Edit .env and add your Gemini API key!"
             print_warning "   Get your API key from: https://aistudio.google.com/app/apikey"
         else
             print_error ".env.example not found. Please ensure you're in the project root directory."
@@ -193,7 +193,7 @@ main() {
     
     # Check if .env has API key
     if grep -q "your_gemini_api_key_here" .env 2>/dev/null; then
-        print_warning "⚠️  API key not configured in .env file"
+        print_warning "API key not configured in .env file"
         print_warning "   Please edit .env and replace 'your_gemini_api_key_here' with your actual API key"
         print_warning "   Get your API key from: https://aistudio.google.com/app/apikey"
     else
@@ -207,9 +207,9 @@ main() {
     echo "=========================================="
     echo -e "${NC}"
     
-    echo "✅ Backend: Python + Flask + Gemini AI"
-    echo "✅ Frontend: React + Vite + Tailwind CSS"
-    echo "✅ Attack scenarios: SQL, Command, Prompt Injection"
+    echo "Backend: Python + Flask + Gemini AI"
+    echo "Frontend: React + Vite + Tailwind CSS"
+    echo "Attack scenarios: SQL, Command, Prompt Injection"
     echo ""
     echo -e "${YELLOW}Next steps:${NC}"
     echo "1. Make sure your API key is set in .env file"
@@ -217,13 +217,13 @@ main() {
     echo "3. Open: ${BLUE}http://localhost:5173${NC} in your browser"
     echo "4. Start learning about LLM security!"
     echo ""
-    echo -e "${RED}⚠️  Educational Use Only${NC}"
+    echo -e "${RED}Educational Use Only${NC}"
     echo "This contains intentional vulnerabilities for learning purposes."
     echo "Never use in production or for malicious purposes."
     echo ""
     echo "For troubleshooting, see README.md or create an issue on GitHub."
     echo ""
-    echo -e "${GREEN}Happy learning! 🎓${NC}"
+    echo -e "${GREEN}Happy learning!${NC}"
 }
 
 # Check if we're in the right directory

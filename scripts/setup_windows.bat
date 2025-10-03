@@ -1,7 +1,19 @@
 @echo off
 echo ========================================
 echo   AutoElite Motors Security Lab Setup
-echo        Educational Use Only
+echoecho Backend: Python + Flask + Gemini AI
+echo Frontend: React + Vite + Tailwind CSS
+echo Attack scenarios: SQL, Command, Prompt Injection
+echo.
+echo Next steps:
+echo 1. Make sure your API key is set in .env file
+echo 2. Run: scripts\start_windows.bat to start both servers
+echo 3. Open: http://localhost:5173 in your browser
+echo 4. Start learning about LLM security!
+echo.
+echo Educational Use Only
+echo This contains intentional vulnerabilities for learning purposes.
+echo Never use in production or for malicious purposes.tional Use Only
 echo ========================================
 
 :: Check if we're in the right directory

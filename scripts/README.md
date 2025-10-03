@@ -2,7 +2,7 @@
 
 This directory contains all setup and utility scripts for the AutoElite Motors Security Lab.
 
-## 🚀 Setup Scripts
+## Setup Scripts
 
 ### Unix/Linux/macOS (or Windows Git Bash)
 
@@ -36,7 +36,7 @@ This directory contains all setup and utility scripts for the AutoElite Motors S
   - Uses Windows-native commands
   - Provides visual feedback
 
-## 📜 Legacy Scripts (Deprecated)
+## Legacy Scripts (Deprecated)
 
 These scripts are kept for compatibility but are no longer actively maintained:
 
@@ -45,7 +45,7 @@ These scripts are kept for compatibility but are no longer actively maintained:
 - `start_frontend.bat` - Frontend-only Windows script
 - `system_check.bat` - Old system verification script
 
-## 🔧 Usage
+## Usage
 
 ### First Time Setup
 
@@ -94,14 +94,14 @@ cd frontend
 npm run dev
 ```
 
-## ⚠️ Important Notes
+## Important Notes
 
 - **Script Permissions**: Unix scripts may need execute permissions (`chmod +x`)
 - **Virtual Environment**: Scripts automatically handle virtual environment activation
 - **Path Dependencies**: Run scripts from the project root directory
 - **API Keys**: Ensure `.env` file is configured before starting services
 
-## 🆘 Common Issues
+## Common Issues
 
 **Permission Denied (Unix/Linux/macOS):**
 ```bash

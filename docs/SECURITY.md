@@ -1,10 +1,10 @@
-# 🔒 Security Notice - Educational Use Only
+# Security Notice - Educational Use Only
 
-## ⚠️ CRITICAL WARNING
+## CRITICAL WARNING
 
 **This project contains INTENTIONAL SECURITY VULNERABILITIES for educational purposes.**
 
-### 🚨 DO NOT USE IN PRODUCTION
+### DO NOT USE IN PRODUCTION
 
 This codebase includes:
 - **Deliberate SQL Injection vulnerabilities**
@@ -13,23 +13,23 @@ This codebase includes:
 - **Hardcoded test credentials**
 - **Disabled security measures**
 
-### ✅ Approved Uses
+### Approved Uses
 
-- 🎓 **Educational demonstrations**
-- 🔬 **Security research**
-- 📚 **Academic coursework**
-- 🛡️ **Defense training**
-- 💡 **Learning about AI security**
+- **Educational demonstrations**
+- **Security research**
+- **Academic coursework**
+- **Defense training**
+- **Learning about AI security**
 
-### ❌ Prohibited Uses
+### Prohibited Uses
 
-- 🌐 **Production deployment**
-- 🔓 **Unauthorized penetration testing**
-- 💀 **Malicious activities**
-- 🌍 **Public internet exposure**
-- ⚖️ **Any illegal purposes**
+- **Production deployment**
+- **Unauthorized penetration testing**
+- **Malicious activities**
+- **Public internet exposure**
+- **Any illegal purposes**
 
-## 🎯 Vulnerability Summary
+## Vulnerability Summary
 
 ### Attack 1: SQL Injection
 - **Location**: AI chat interface via `debug_sql` function
@@ -46,17 +46,17 @@ This codebase includes:
 - **Impact**: AI behavior manipulation, unauthorized actions
 - **Purpose**: Illustrate AI context contamination
 
-## 🛡️ Real-World Mitigation
+## Real-World Mitigation
 
 In production systems, these vulnerabilities should be prevented by:
 
 ### SQL Injection Prevention
 ```python
-# ❌ Vulnerable (current implementation)
+# Vulnerable (current implementation)
 def debug_sql(query):
     return execute_raw_sql(query)
 
-# ✅ Secure implementation
+# Secure implementation
 def get_user_info(user_id: int):
     return db.execute(
         "SELECT name, email FROM users WHERE id = ?", 
@@ -66,11 +66,11 @@ def get_user_info(user_id: int):
 
 ### Command Injection Prevention
 ```python
-# ❌ Vulnerable (current implementation)
+# Vulnerable (current implementation)
 def newsletter_subscribe(email):
     os.system(f"echo {email} >> subscribers.txt")
 
-# ✅ Secure implementation
+# Secure implementation
 import re
 def newsletter_subscribe(email):
     if not re.match(r'^[\w\.-]+@[\w\.-]+\.\w+$', email):
@@ -80,12 +80,12 @@ def newsletter_subscribe(email):
 
 ### Prompt Injection Prevention
 ```python
-# ❌ Vulnerable (current implementation)
+# Vulnerable (current implementation)
 def process_review(review_text):
     prompt = f"Analyze this review: {review_text}"
     return ai_model.generate(prompt)
 
-# ✅ Secure implementation
+# Secure implementation
 def process_review(review_text):
     # Sanitize input
     sanitized = sanitize_user_input(review_text)
@@ -98,7 +98,7 @@ def process_review(review_text):
     return ai_model.generate_structured(prompt)
 ```
 
-## 📋 Security Checklist
+## Security Checklist
 
 Before sharing or deploying ANY version:
 
@@ -109,7 +109,7 @@ Before sharing or deploying ANY version:
 - [ ] **Test in isolated environment** only
 - [ ] **Confirm no production credentials** are included
 
-## 🔍 Responsible Disclosure
+## Responsible Disclosure
 
 If you discover similar vulnerabilities in real systems:
 
@@ -125,7 +125,7 @@ If you discover similar vulnerabilities in real systems:
 - **CVE coordination**: MITRE, NVD
 - **Academic research**: Conference papers, journals
 
-## 📚 Educational Resources
+## Educational Resources
 
 ### Learn More About AI Security
 - [OWASP Top 10 for LLM Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
@@ -137,15 +137,15 @@ If you discover similar vulnerabilities in real systems:
 - [Microsoft Secure Development Lifecycle](https://www.microsoft.com/en-us/securityengineering/sdl/)
 - [Google Security by Design](https://cloud.google.com/security/security-by-design)
 
-## ⚖️ Legal Disclaimer
+## Legal Disclaimer
 
 ### Educational License
 This project is provided under an educational license:
-- ✅ **Free for learning** and research purposes
-- ✅ **Classroom demonstrations** and assignments
-- ✅ **Security training** and awareness
-- ❌ **Commercial use prohibited**
-- ❌ **No warranty provided**
+- **Free for learning** and research purposes
+- **Classroom demonstrations** and assignments
+- **Security training** and awareness
+- **Commercial use prohibited**
+- **No warranty provided**
 
 ### Liability Disclaimer
 - **Use at your own risk**
@@ -160,7 +160,7 @@ By using this project, you agree to:
 - Respect others' systems and data
 - Contribute to security knowledge positively
 
-## 🚨 Incident Response
+## Incident Response
 
 If this project is ever deployed inappropriately:
 
@@ -170,7 +170,7 @@ If this project is ever deployed inappropriately:
 4. **Document the incident** for learning purposes
 5. **Implement additional safeguards** to prevent recurrence
 
-## 📞 Contact Information
+## Contact Information
 
 For security concerns about this educational project:
 - **GitHub Issues**: Report through project repository

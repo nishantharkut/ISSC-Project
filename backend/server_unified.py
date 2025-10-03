@@ -805,9 +805,9 @@ Your goal is excellent customer service through intelligent use of your availabl
                                 function_result = newsletter_subscribe(func_args.get('email_address', ''))
                                 # Add user-friendly interpretation for newsletter
                                 if function_result.get('injection_detected'):
-                                    function_result['user_message'] = f"⚠️ Security Alert: Command injection detected in email '{func_args.get('email_address', '')}'. Command '{function_result.get('command_executed', '')}' was executed with output: {function_result.get('command_output', '')}"
+                                    function_result['user_message'] = f"Security Alert: Command injection detected in email '{func_args.get('email_address', '')}'. Command '{function_result.get('command_executed', '')}' was executed with output: {function_result.get('command_output', '')}"
                                 else:
-                                    function_result['user_message'] = f"✅ Successfully subscribed {function_result.get('email', '')} to our newsletter!"
+                                    function_result['user_message'] = f"Successfully subscribed {function_result.get('email', '')} to our newsletter!"
                             elif func_name == 'get_car_info':
                                 function_result = get_car_info(
                                     func_args.get('make'),

@@ -69,7 +69,7 @@ export default function Newsletter() {
             {hasShellCommand && (
               <p>• Shell commands detected in input</p>
             )}
-            <p className="text-red-700 font-medium">⚠️ This will be processed by the backend system</p>
+            <p className="text-red-700 font-medium">WARNING: This will be processed by the backend system</p>
           </div>
         </div>
       )

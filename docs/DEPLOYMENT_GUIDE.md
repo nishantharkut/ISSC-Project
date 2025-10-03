@@ -1,16 +1,16 @@
-# 📚 AutoElite Motors - Deployment Guide
+# AutoElite Motors - Deployment Guide
 
 > **Complete step-by-step instructions for setting up the LLM Security Research Lab**
 
-## 🎯 Overview
+## Overview
 
 This guide will help you set up the AutoElite Motors security demonstration project on your machine. The project showcases three different types of LLM prompt injection attacks in a realistic web application environment.
 
-**⚠️ Educational Use Only**: This project contains intentional security vulnerabilities for learning purposes.
+**Educational Use Only**: This project contains intentional security vulnerabilities for learning purposes.
 
 ---
 
-## 📋 Prerequisites Checklist
+## Prerequisites Checklist
 
 Before starting, ensure you have:
 
@@ -30,7 +30,7 @@ Before starting, ensure you have:
 
 ---
 
-## 🚀 Quick Setup (Recommended)
+## Quick Setup (Recommended)
 
 ### Option A: Automated Setup
 
@@ -66,7 +66,7 @@ Before starting, ensure you have:
 
 ---
 
-## 🔧 Manual Setup (Step-by-Step)
+## Manual Setup (Step-by-Step)
 
 ### Step 1: Clone and Navigate
 
@@ -173,7 +173,7 @@ npm run dev
 
 ---
 
-## 🎮 Testing Attack Scenarios
+## Testing Attack Scenarios
 
 ### Attack 1: SQL Injection via AI Chat
 
@@ -258,7 +258,7 @@ npm run dev
 
 ---
 
-## 🛠️ Troubleshooting Guide
+## Troubleshooting Guide
 
 ### Common Issues and Solutions
 
@@ -362,7 +362,7 @@ sudo chown -R $USER:$USER .
 
 ---
 
-## 🔒 Security Considerations
+## Security Considerations
 
 ### Before Sharing Your Setup
 
@@ -402,7 +402,7 @@ echo "config/production.json" >> .gitignore
 
 ---
 
-## 📞 Getting Help
+## Getting Help
 
 ### Self-Help Resources
 
@@ -451,15 +451,15 @@ Copy exact error messages here
 
 ---
 
-## 🎓 Educational Outcomes
+## Educational Outcomes
 
 After completing this setup, you will have:
 
-- ✅ **Hands-on LLM Security Experience**: Working with real prompt injection vulnerabilities
-- ✅ **Full-Stack Development Skills**: React frontend with Python backend
-- ✅ **AI Integration Knowledge**: Working with Google Gemini API
-- ✅ **Security Research Methods**: Understanding attack vectors and exploitation
-- ✅ **Professional Development Setup**: Modern toolchain and best practices
+- **Hands-on LLM Security Experience**: Working with real prompt injection vulnerabilities
+- **Full-Stack Development Skills**: React frontend with Python backend
+- **AI Integration Knowledge**: Working with Google Gemini API
+- **Security Research Methods**: Understanding attack vectors and exploitation
+- **Professional Development Setup**: Modern toolchain and best practices
 
 ### Learning Progression
 
@@ -471,7 +471,7 @@ After completing this setup, you will have:
 
 ---
 
-## 📋 Setup Verification Checklist
+## Setup Verification Checklist
 
 Use this checklist to verify your setup is working correctly:
 
@@ -510,6 +510,6 @@ Use this checklist to verify your setup is working correctly:
 
 ---
 
-**🎉 Congratulations!** You now have a fully functional LLM security research environment. Use it responsibly to learn about AI security vulnerabilities and how to defend against them.
+**Congratulations!** You now have a fully functional LLM security research environment. Use it responsibly to learn about AI security vulnerabilities and how to defend against them.
 
 For advanced usage, additional attack scenarios, or contributing to the project, see the main README.md file.

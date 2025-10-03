@@ -2,16 +2,16 @@
 
 This directory contains comprehensive documentation for the AutoElite Motors Security Research Lab.
 
-## 📚 Documentation Files
+## Documentation Files
 
-### 🚀 Getting Started
+### Getting Started
 
 - **[QUICKSTART.md](QUICKSTART.md)** - 5-minute setup guide
   - Fastest way to get running
   - Essential commands only
   - Perfect for experienced developers
 
-### 📖 Detailed Guides
+### Detailed Guides
 
 - **[DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)** - Complete setup instructions
   - Step-by-step installation
@@ -19,7 +19,7 @@ This directory contains comprehensive documentation for the AutoElite Motors Sec
   - Platform-specific guidance
   - Attack demonstration walkthrough
 
-### 🔒 Security Information
+### Security Information
 
 - **[SECURITY.md](SECURITY.md)** - Security warnings and educational guidelines
   - Vulnerability descriptions
@@ -27,7 +27,7 @@ This directory contains comprehensive documentation for the AutoElite Motors Sec
   - Real-world mitigation strategies
   - Responsible disclosure guidelines
 
-## 🎯 Documentation Hierarchy
+## Documentation Hierarchy
 
 ```
 docs/
@@ -36,7 +36,7 @@ docs/
 └── SECURITY.md          # Security warnings and educational info
 ```
 
-## 📋 Which Document Should I Read?
+## Which Document Should I Read?
 
 ### New Users
 1. **Start with**: [QUICKSTART.md](QUICKSTART.md)
@@ -53,7 +53,7 @@ docs/
 2. **Set up environment**: [DEPLOYMENT_GUIDE.md](DEPLOYMENT_GUIDE.md)
 3. **Quick reference**: [QUICKSTART.md](QUICKSTART.md)
 
-## 🔄 Documentation Updates
+## Documentation Updates
 
 When updating documentation:
 
@@ -62,7 +62,7 @@ When updating documentation:
 3. **Test all commands** on multiple platforms
 4. **Maintain educational focus** throughout
 
-## 🆘 Need More Help?
+## Need More Help?
 
 If the documentation doesn't answer your questions:
 

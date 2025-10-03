@@ -1,0 +1,62 @@
+Educational Use License
+
+Copyright (c) 2024 AutoElite Motors Security Research Project
+
+EDUCATIONAL USE ONLY - READ CAREFULLY
+
+This software and associated documentation is provided for EDUCATIONAL and RESEARCH purposes only. By using, downloading, or accessing this software, you agree to the following terms:
+
+PERMITTED USES:
+- Educational instruction and classroom demonstrations
+- Academic research and coursework
+- Security training and awareness programs  
+- Learning about AI security vulnerabilities
+- Understanding prompt injection attack vectors
+- Developing defensive security knowledge
+
+PROHIBITED USES:
+- Production deployment of any kind
+- Commercial use or redistribution for profit
+- Malicious attacks against any systems
+- Unauthorized penetration testing
+- Any illegal or harmful activities
+- Public internet deployment without proper security measures
+
+SECURITY DISCLAIMER:
+This software contains INTENTIONAL SECURITY VULNERABILITIES designed for educational demonstration. These vulnerabilities include but are not limited to:
+- SQL injection flaws
+- Command injection vulnerabilities  
+- Prompt injection weaknesses
+- Insufficient input validation
+- Hardcoded test credentials
+
+The software is provided "AS IS" without warranty of any kind. The authors and contributors are not responsible for any misuse, damage, or legal consequences resulting from use of this software.
+
+RESPONSIBLE USE REQUIREMENTS:
+Users must:
+- Keep the software in isolated, controlled environments
+- Never deploy to production or public-facing systems
+- Follow responsible disclosure practices for any similar vulnerabilities found in real systems
+- Use knowledge gained for defensive purposes only
+- Comply with all applicable laws and regulations
+
+CONTRIBUTION:
+Contributions that improve the educational value while maintaining the security research focus are welcome. All contributions must maintain the educational purpose and include appropriate warnings about the intentional vulnerabilities.
+
+DISCLAIMER OF LIABILITY:
+In no event shall the authors or copyright holders be liable for any claim, damages, or other liability arising from use of this software. Users assume all responsibility for the consequences of their use.
+
+By using this software, you acknowledge that you have read, understood, and agree to be bound by these terms.
+
+For questions about appropriate use, please consult your institution's policies or legal counsel.
+
+---
+
+This project is inspired by security research methodologies and is designed to complement courses in:
+- Cybersecurity
+- AI/ML Security  
+- Web Application Security
+- Ethical Hacking
+- Security Engineering
+
+Educational institutions are encouraged to adapt this project for their curricula while maintaining appropriate safeguards and student guidance.

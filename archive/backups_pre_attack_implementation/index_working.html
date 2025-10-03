@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoElite Motors - Premium Car Dealership</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <h1>🚗 AutoElite Motors</h1>
+                    <p class="tagline">Your Dream Car Awaits</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#inventory">Inventory</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#finance">Financing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="btn-chat" id="openChatBtn">💬 Ask AI Assistant</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Find Your Perfect Vehicle</h2>
+            <p>Premium selection of luxury and performance cars</p>
+            <div class="hero-search">
+                <input type="text" placeholder="Search by make, model, or type..." id="heroSearch">
+                <button class="btn-primary">Search Inventory</button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="featured-section">
+            <h2>🌟 Featured Vehicles</h2>
+            <div class="car-grid">
+                <div class="car-card featured">
+                    <div class="car-badge">FEATURED</div>
+                    <img src="https://via.placeholder.com/400x250/1a1a2e/ffffff?text=2024+Tesla+Model+S" alt="Tesla Model S">
+                    <div class="car-info">
+                        <h3>2024 Tesla Model S Plaid</h3>
+                        <p class="car-specs">Electric • 1,020 HP • 0-60 in 1.99s</p>
+                        <div class="car-features">
+                            <span>✓ Autopilot</span>
+                            <span>✓ Premium Interior</span>
+                            <span>✓ 396 mi Range</span>
+                        </div>
+                        <div class="car-footer">
+                            <p class="price">$129,990</p>
+                            <button class="btn-details" onclick="showCarDetails('tesla-s')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://via.placeholder.com/400x250/2d4059/ffffff?text=2024+Porsche+911" alt="Porsche 911">
+                    <div class="car-info">
+                        <h3>2024 Porsche 911 Turbo S</h3>
+                        <p class="car-specs">Gas • 640 HP • 0-60 in 2.6s</p>
+                        <div class="car-features">
+                            <span>✓ AWD</span>
+                            <span>✓ Sport Chrono</span>
+                            <span>✓ Carbon Ceramic</span>
+                        </div>
+                        <div class="car-footer">
+                            <p class="price">$207,000</p>
+                            <button class="btn-details" onclick="showCarDetails('porsche-911')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://via.placeholder.com/400x250/ea5455/ffffff?text=2024+Ferrari+F8" alt="Ferrari F8">
+                    <div class="car-info">
+                        <h3>2024 Ferrari F8 Tributo</h3>
+                        <p class="car-specs">Gas • 710 HP • 0-60 in 2.9s</p>
+                        <div class="car-features">
+                            <span>✓ V8 Twin-Turbo</span>
+                            <span>✓ Carbon Fiber</span>
+                            <span>✓ Limited Edition</span>
+                        </div>
+                        <div class="car-footer">
+                            <p class="price">$283,950</p>
+                            <button class="btn-details" onclick="showCarDetails('ferrari-f8')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://via.placeholder.com/400x250/f9ca24/000000?text=2024+Lamborghini" alt="Lamborghini">
+                    <div class="car-info">
+                        <h3>2024 Lamborghini Huracán</h3>
+                        <p class="car-specs">Gas • 631 HP • 0-60 in 2.9s</p>
+                        <div class="car-features">
+                            <span>✓ V10 Engine</span>
+                            <span>✓ AWD</span>
+                            <span>✓ Sport Exhaust</span>
+                        </div>
+                        <div class="car-footer">
+                            <p class="price">$248,295</p>
+                            <button class="btn-details" onclick="showCarDetails('lambo-huracan')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://via.placeholder.com/400x250/00d2d3/000000?text=2024+BMW+M4" alt="BMW M4">
+                    <div class="car-info">
+                        <h3>2024 BMW M4 Competition</h3>
+                        <p class="car-specs">Gas • 503 HP • 0-60 in 3.8s</p>
+                        <div class="car-features">
+                            <span>✓ M xDrive</span>
+                            <span>✓ Carbon Roof</span>
+                            <span>✓ Track Package</span>
+                        </div>
+                        <div class="car-footer">
+                            <p class="price">$78,800</p>
+                            <button class="btn-details" onclick="showCarDetails('bmw-m4')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="car-card">
+                    <img src="https://via.placeholder.com/400x250/6c5ce7/ffffff?text=2024+Mercedes+AMG" alt="Mercedes AMG">
+                    <div class="car-info">
+                        <h3>2024 Mercedes-AMG GT</h3>
+                        <p class="car-specs">Gas • 577 HP • 0-60 in 3.5s</p>
+                        <div class="car-features">
+                            <span>✓ V8 Biturbo</span>
+                            <span>✓ AMG Ride Control</span>
+                            <span>✓ Performance Exhaust</span>
+                        </div>
+                        <div class="car-footer">
+                            <p class="price">$118,600</p>
+                            <button class="btn-details" onclick="showCarDetails('merc-amg')">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="why-choose">
+            <h2>Why Choose AutoElite Motors?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🏆</div>
+                    <h3>Premium Selection</h3>
+                    <p>Curated collection of luxury and high-performance vehicles</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🤖</div>
+                    <h3>AI Assistant</h3>
+                    <p>24/7 intelligent chatbot to answer all your questions</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h3>Flexible Financing</h3>
+                    <p>Multiple financing options with competitive rates</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔧</div>
+                    <h3>Full Service</h3>
+                    <p>Comprehensive warranty and maintenance packages</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <h2>Have Questions About Our Vehicles?</h2>
+            <p>Our AI assistant is ready to help you find the perfect car!</p>
+            <button class="btn-large" id="ctaChatBtn">💬 Chat with AI Assistant</button>
+        </section>
+    </main>
+
+    <!-- AI Chatbot Modal -->
+    <div id="chatModal" class="chat-modal">
+        <div class="chat-modal-content">
+            <div class="chat-header">
+                <div>
+                    <h3>🤖 AutoElite AI Assistant</h3>
+                    <p class="chat-status">Online • Powered by Gemini AI</p>
+                </div>
+                <button class="close-chat" id="closeChatBtn">&times;</button>
+            </div>
+
+            <div id="chatContainer" class="chat-messages">
+                <div class="message bot-message">
+                    <strong>AI Assistant:</strong> Welcome to AutoElite Motors! I'm your AI car expert. 
+                    I can help you with car information, customer database queries, and newsletter subscriptions. 
+                    How can I assist you today?
+                </div>
+            </div>
+
+            <div class="chat-input-area">
+                <input type="text" id="chatInput" placeholder="Ask me anything..." class="chat-input-field">
+                <button id="sendChatBtn" class="btn-send">Send</button>
+            </div>
+
+            <div id="debugPanel" class="debug-panel-car">
+                <div class="debug-header">
+                    <h4>🔍 API Call Log</h4>
+                    <button id="toggleDebug" class="btn-toggle">Hide</button>
+                </div>
+                <div id="debugLog" class="debug-content"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>AutoElite Motors</h4>
+                    <p>Premium luxury and performance vehicles</p>
+                    <p>© 2025 AutoElite Motors. All rights reserved.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#inventory">View Inventory</a></li>
+                        <li><a href="#finance">Financing Options</a></li>
+                        <li><a href="#trade">Trade-In</a></li>
+                        <li><a href="#service">Service Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p>📍 123 Luxury Auto Blvd, CA 90210</p>
+                    <p>📞 (555) 123-4567</p>
+                    <p>📧 info@autoelitemotors.com</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app_unified.js"></script>
+</body>
+</html>

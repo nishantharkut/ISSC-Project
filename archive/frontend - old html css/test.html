@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoElite Motors - System Check</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .status-card {
+            background: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 5px solid #ccc;
+        }
+        .status-ok { border-left-color: #28a745; }
+        .status-error { border-left-color: #dc3545; }
+        .btn {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .btn:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+    <h1>🚗 AutoElite Motors - System Status</h1>
+    
+    <div id="frontend-status" class="status-card">
+        <h3>Frontend Status</h3>
+        <p id="frontend-text">✅ Frontend is running (you can see this page)</p>
+    </div>
+    
+    <div id="backend-status" class="status-card">
+        <h3>Backend Status</h3>
+        <p id="backend-text">🔄 Checking backend...</p>
+    </div>
+    
+    <div id="api-test" class="status-card">
+        <h3>API Test</h3>
+        <p id="api-text">⏳ Waiting for backend check...</p>
+        <button id="test-api" class="btn" onclick="testAPI()" disabled>Test Chat API</button>
+    </div>
+    
+    <div class="status-card">
+        <h3>Next Steps</h3>
+        <button class="btn" onclick="window.location.href='index.html'">🚀 Go to Main Site</button>
+        <button class="btn" onclick="window.location.href='index.html?research=true'">🔧 Research Mode</button>
+    </div>
+
+    <script>
+        async function checkBackend() {
+            try {
+                const response = await fetch('http://localhost:5000/api/me');
+                if (response.ok) {
+                    document.getElementById('backend-status').className = 'status-card status-ok';
+                    document.getElementById('backend-text').textContent = '✅ Backend is running on port 5000';
+                    document.getElementById('test-api').disabled = false;
+                    document.getElementById('api-text').textContent = '✅ Ready to test API';
+                } else {
+                    throw new Error('Backend returned error: ' + response.status);
+                }
+            } catch (error) {
+                document.getElementById('backend-status').className = 'status-card status-error';
+                document.getElementById('backend-text').innerHTML = '❌ Backend not running<br>Please double-click start_backend.bat';
+                document.getElementById('api-text').textContent = '❌ Cannot test API - backend not running';
+            }
+        }
+
+        async function testAPI() {
+            document.getElementById('api-text').textContent = '🔄 Testing chat API...';
+            
+            try {
+                const response = await fetch('http://localhost:5000/api/chat', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: 'Hello, test message' })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    document.getElementById('api-test').className = 'status-card status-ok';
+                    document.getElementById('api-text').innerHTML = '✅ Chat API working!<br>Response: ' + (data.response || 'No response');
+                } else {
+                    throw new Error('API error: ' + (data.error || 'Unknown error'));
+                }
+            } catch (error) {
+                document.getElementById('api-test').className = 'status-card status-error';
+                document.getElementById('api-text').innerHTML = '❌ API test failed<br>Error: ' + error.message;
+            }
+        }
+
+        // Auto-check backend on page load
+        checkBackend();
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoElite Motors - Premium Luxury Cars</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>🚗 AutoElite Motors</h1>
+                <p>Premium Luxury Vehicles</p>
+            </div>
+            <nav class="nav">
+                <a href="#cars">Cars</a>
+                <a href="#products">Products</a>
+                <a href="#" onclick="openChat()">Live Chat</a>
+                <div class="auth-section">
+                    <span id="user-info" style="display: none;">
+                        Welcome, <span id="username"></span>
+                        <button onclick="logout()" class="btn-small">Logout</button>
+                    </span>
+                    <div id="auth-buttons">
+                        <button onclick="openLogin()" class="btn-small">Login</button>
+                        <button onclick="openRegister()" class="btn-small">Register</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Experience Automotive Excellence</h2>
+            <p>Discover our curated collection of premium luxury vehicles</p>
+            <button onclick="openChat()" class="cta-button">Ask Our AI Assistant</button>
+        </div>
+    </section>
+
+    <!-- Cars Section -->
+    <section id="cars" class="cars-section">
+        <div class="container">
+            <h3>Our Collection</h3>
+            <div class="cars-grid">
+                <div class="car-card">
+                    <h4>Tesla Model S Plaid</h4>
+                    <p>$129,990 | 1,020 HP | Electric</p>
+                </div>
+                <div class="car-card">
+                    <h4>Porsche 911 Turbo S</h4>
+                    <p>$207,000 | 640 HP | Gas</p>
+                </div>
+                <div class="car-card">
+                    <h4>Ferrari F8 Tributo</h4>
+                    <p>$283,950 | 710 HP | Gas</p>
+                </div>
+                <div class="car-card">
+                    <h4>Lamborghini Huracán</h4>
+                    <p>$248,295 | 631 HP | Gas</p>
+                </div>
+                <div class="car-card">
+                    <h4>BMW M4 Competition</h4>
+                    <p>$78,800 | 503 HP | Gas</p>
+                </div>
+                <div class="car-card">
+                    <h4>Mercedes-AMG GT</h4>
+                    <p>$118,600 | 577 HP | Gas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h3>AutoElite Products</h3>
+            <div class="products-grid">
+                <div class="product-card" data-product-id="leather-jacket">
+                    <h4>Lightweight "l33t" Leather Jacket</h4>
+                    <p>$299.99 | Premium lightweight leather jacket with modern styling</p>
+                    <button onclick="viewProduct('leather-jacket')" class="btn">View Details</button>
+                </div>
+                <div class="product-card" data-product-id="umbrella">
+                    <h4>Premium Auto Umbrella</h4>
+                    <p>$49.99 | High-quality umbrella with auto-open feature</p>
+                    <button onclick="viewProduct('umbrella')" class="btn">View Details</button>
+                </div>
+                <div class="product-card" data-product-id="keychain">
+                    <h4>AutoElite Keychain</h4>
+                    <p>$19.99 | Elegant metal keychain with AutoElite logo</p>
+                    <button onclick="viewProduct('keychain')" class="btn">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h3>🤖 AutoElite AI Assistant</h3>
+                <span class="close" onclick="closeChat()">&times;</span>
+            </div>
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages"></div>
+                <div class="chat-input-section">
+                    <input type="text" id="chatInput" placeholder="Ask me anything about our cars, products, or services..." />
+                    <button onclick="sendMessage()" id="sendButton">Send</button>
+                </div>
+            </div>
+            <div class="debug-panel">
+                <h4>🔧 Function Calls Debug</h4>
+                <div id="debugLog" class="debug-log"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login</h3>
+                <span class="close" onclick="closeLogin()">&times;</span>
+            </div>
+            <form id="loginForm" onsubmit="login(event)">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Register</h3>
+                <span class="close" onclick="closeRegister()">&times;</span>
+            </div>
+            <form id="registerForm" onsubmit="register(event)">
+                <div class="form-group">
+                    <label for="registerName">Full Name:</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerUsername">Username:</label>
+                    <input type="text" id="registerUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password:</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="productTitle">Product Details</h3>
+                <span class="close" onclick="closeProduct()">&times;</span>
+            </div>
+            <div id="productDetails">
+                <div id="productInfo"></div>
+                <div class="reviews-section">
+                    <h4>Customer Reviews</h4>
+                    <div id="reviewsList"></div>
+                    <div class="add-review">
+                        <h5>Add a Review</h5>
+                        <form id="reviewForm" onsubmit="addReview(event)">
+                            <div class="form-group">
+                                <label for="reviewAuthor">Your Name:</label>
+                                <input type="text" id="reviewAuthor" value="Anonymous">
+                            </div>
+                            <div class="form-group">
+                                <label for="reviewText">Review:</label>
+                                <textarea id="reviewText" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Add Review</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attack Testing Panel (for security researchers) -->
+    <div id="attackPanel" class="attack-panel" style="display: none;">
+        <h4>🎯 Attack Testing Panel</h4>
+        <div class="attack-buttons">
+            <button onclick="testAttack1()" class="attack-btn">Test Attack 1: SQL Injection</button>
+            <button onclick="testAttack2()" class="attack-btn">Test Attack 2: Command Injection</button>
+            <button onclick="testAttack3()" class="attack-btn">Test Attack 3: Indirect Prompt Injection</button>
+            <button onclick="resetEnvironment()" class="reset-btn">Reset Environment</button>
+        </div>
+        <div id="attackResults" class="attack-results"></div>
+    </div>
+
+    <!-- Toggle Attack Panel Button -->
+    <button id="toggleAttackPanel" onclick="toggleAttackPanel()" class="toggle-btn">🔧 Security Research</button>
+
+    <script src="app_advanced_attacks.js"></script>
+</body>
+</html>

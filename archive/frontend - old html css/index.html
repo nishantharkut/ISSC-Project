@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoElite Motors - Premium Luxury Cars</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-car-side"></i>
+                <span>AutoElite</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#vehicles" class="nav-link">Vehicles</a>
+                <a href="#products" class="nav-link">Products</a>
+                <button onclick="openChat()" class="btn-chat">
+                    <i class="fas fa-comments"></i>
+                    AI Assistant
+                </button>
+                <div class="auth-section">
+                    <div id="user-info" style="display: none;">
+                        <span class="user-welcome">Welcome, <span id="username"></span></span>
+                        <button onclick="logout()" class="btn-secondary">Logout</button>
+                    </div>
+                    <div id="auth-buttons">
+                        <button onclick="openLogin()" class="btn-secondary">Login</button>
+                        <button onclick="openRegister()" class="btn-primary">Register</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Experience Automotive
+                    <span class="highlight">Excellence</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Discover our curated collection of premium luxury vehicles crafted for the ultimate driving experience
+                </p>
+                <div class="hero-actions">
+                    <button onclick="openChat()" class="btn-hero-primary">
+                        <i class="fas fa-robot"></i>
+                        Talk to AI Assistant
+                    </button>
+                    <button onclick="scrollToSection('vehicles')" class="btn-hero-secondary">
+                        <i class="fas fa-arrow-down"></i>
+                        View Collection
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Premium Vehicles</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">15</span>
+                        <span class="stat-label">Luxury Brands</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">AI Support</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vehicles Section -->
+    <section id="vehicles" class="vehicles-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Premium Collection</h2>
+                <p class="section-subtitle">Handpicked luxury vehicles for the ultimate driving experience</p>
+            </div>
+            <div class="vehicles-grid">
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI0MCIgdmlld0JveD0iMCAwIDQwMCAyNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjQwIiBmaWxsPSIjZjhmOWZhIi8+CjxyZWN0IHg9IjUwIiB5PSI4MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSIjZTIyOWEzIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5UZXNsYTwvdGV4dD4KPC9zdmc+" alt="Tesla Model S Plaid">
+                        <div class="vehicle-badge">Electric</div>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Tesla Model S Plaid</h3>
+                        <div class="vehicle-specs">
+                            <span class="spec">
+                                <i class="fas fa-bolt"></i>
+                                1,020 HP
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                2.1s 0-60
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-leaf"></i>
+                                Electric
+                            </span>
+                        </div>
+                        <div class="vehicle-price">$129,990</div>
+                        <button class="btn-vehicle">View Details</button>
+                    </div>
+                </div>
+
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI0MCIgdmlld0JveD0iMCAwIDQwMCAyNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjQwIiBmaWxsPSIjZjhmOWZhIi8+CjxyZWN0IHg9IjUwIiB5PSI4MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSIjMWY0MGZmIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5Qb3JzY2hlPC90ZXh0Pgo8L3N2Zz4=" alt="Porsche 911 Turbo S">
+                        <div class="vehicle-badge">Sports</div>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Porsche 911 Turbo S</h3>
+                        <div class="vehicle-specs">
+                            <span class="spec">
+                                <i class="fas fa-bolt"></i>
+                                640 HP
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                2.6s 0-60
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-gas-pump"></i>
+                                Premium
+                            </span>
+                        </div>
+                        <div class="vehicle-price">$207,000</div>
+                        <button class="btn-vehicle">View Details</button>
+                    </div>
+                </div>
+
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI0MCIgdmlld0JveD0iMCAwIDQwMCAyNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjQwIiBmaWxsPSIjZjhmOWZhIi8+CjxyZWN0IHg9IjUwIiB5PSI4MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSIjZGMxNjI2Ii8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5GZXJ2YXJpPC90ZXh0Pgo8L3N2Zz4=" alt="Ferrari F8 Tributo">
+                        <div class="vehicle-badge">Supercar</div>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Ferrari F8 Tributo</h3>
+                        <div class="vehicle-specs">
+                            <span class="spec">
+                                <i class="fas fa-bolt"></i>
+                                710 HP
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                2.9s 0-60
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-gas-pump"></i>
+                                Premium
+                            </span>
+                        </div>
+                        <div class="vehicle-price">$283,950</div>
+                        <button class="btn-vehicle">View Details</button>
+                    </div>
+                </div>
+
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI0MCIgdmlld0JveD0iMCAwIDQwMCAyNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjQwIiBmaWxsPSIjZjhmOWZhIi8+CjxyZWN0IHg9IjUwIiB5PSI4MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSIjZmY2MzAwIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5MYW1ib3JnaGluaTwvdGV4dD4KPC9zdmc+" alt="Lamborghini Huracán">
+                        <div class="vehicle-badge">Supercar</div>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Lamborghini Huracán</h3>
+                        <div class="vehicle-specs">
+                            <span class="spec">
+                                <i class="fas fa-bolt"></i>
+                                631 HP
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                3.2s 0-60
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-gas-pump"></i>
+                                Premium
+                            </span>
+                        </div>
+                        <div class="vehicle-price">$248,295</div>
+                        <button class="btn-vehicle">View Details</button>
+                    </div>
+                </div>
+
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI0MCIgdmlld0JveD0iMCAwIDQwMCAyNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjQwIiBmaWxsPSIjZjhmOWZhIi8+CjxyZWN0IHg9IjUwIiB5PSI4MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSIjMDk3NGUyIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5CTVc8L3RleHQ+Cjwvc3ZnPg==" alt="BMW M4 Competition">
+                        <div class="vehicle-badge">Sports</div>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">BMW M4 Competition</h3>
+                        <div class="vehicle-specs">
+                            <span class="spec">
+                                <i class="fas fa-bolt"></i>
+                                503 HP
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                3.8s 0-60
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-gas-pump"></i>
+                                Premium
+                            </span>
+                        </div>
+                        <div class="vehicle-price">$78,800</div>
+                        <button class="btn-vehicle">View Details</button>
+                    </div>
+                </div>
+
+                <div class="vehicle-card">
+                    <div class="vehicle-image">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI0MCIgdmlld0JveD0iMCAwIDQwMCAyNDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjQwIiBmaWxsPSIjZjhmOWZhIi8+CjxyZWN0IHg9IjUwIiB5PSI4MCIgd2lkdGg9IjMwMCIgaGVpZ2h0PSI4MCIgcng9IjEwIiBmaWxsPSIjMzc0MTUxIi8+Cjx0ZXh0IHg9IjIwMCIgeT0iMTMwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTYiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5NZXJjZWRlczwvdGV4dD4KPC9zdmc+" alt="Mercedes-AMG GT">
+                        <div class="vehicle-badge">Luxury</div>
+                    </div>
+                    <div class="vehicle-content">
+                        <h3 class="vehicle-name">Mercedes-AMG GT</h3>
+                        <div class="vehicle-specs">
+                            <span class="spec">
+                                <i class="fas fa-bolt"></i>
+                                577 HP
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-tachometer-alt"></i>
+                                3.6s 0-60
+                            </span>
+                            <span class="spec">
+                                <i class="fas fa-gas-pump"></i>
+                                Premium
+                            </span>
+                        </div>
+                        <div class="vehicle-price">$118,600</div>
+                        <button class="btn-vehicle">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <h3>AutoElite Products</h3>
+            <div class="products-grid">
+                <div class="product-card" data-product-id="leather-jacket">
+                    <h4>Lightweight "l33t" Leather Jacket</h4>
+                    <p>$299.99 | Premium lightweight leather jacket with modern styling</p>
+                    <button onclick="viewProduct('leather-jacket')" class="btn">View Details</button>
+                </div>
+                <div class="product-card" data-product-id="umbrella">
+                    <h4>Premium Auto Umbrella</h4>
+                    <p>$49.99 | High-quality umbrella with auto-open feature</p>
+                    <button onclick="viewProduct('umbrella')" class="btn">View Details</button>
+                </div>
+                <div class="product-card" data-product-id="keychain">
+                    <h4>AutoElite Keychain</h4>
+                    <p>$19.99 | Elegant metal keychain with AutoElite logo</p>
+                    <button onclick="viewProduct('keychain')" class="btn">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chat Modal -->
+    <div id="chatModal" class="modal chat-modal">
+        <div class="modal-content chat-modal">
+            <div class="modal-header">
+                <h3>🤖 AutoElite AI Assistant</h3>
+                <span class="close" onclick="closeChat()">&times;</span>
+            </div>
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages"></div>
+                <div class="chat-input-section">
+                    <input type="text" id="chatInput" placeholder="Ask me anything about our cars, products, or services..." />
+                    <button onclick="sendMessage()" id="sendButton">Send</button>
+                </div>
+            </div>
+            <div class="debug-panel">
+                <h4>🔧 Function Calls Debug</h4>
+                <div id="debugLog" class="debug-log"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Login</h3>
+                <span class="close" onclick="closeLogin()">&times;</span>
+            </div>
+            <form id="loginForm" onsubmit="login(event)">
+                <div class="form-group">
+                    <label for="loginEmail">Email:</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password:</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Register</h3>
+                <span class="close" onclick="closeRegister()">&times;</span>
+            </div>
+            <form id="registerForm" onsubmit="register(event)">
+                <div class="form-group">
+                    <label for="registerName">Full Name:</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerUsername">Username:</label>
+                    <input type="text" id="registerUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">Email:</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password:</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <button type="submit" class="btn">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Product Details Modal -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="productTitle">Product Details</h3>
+                <span class="close" onclick="closeProduct()">&times;</span>
+            </div>
+            <div id="productDetails">
+                <div id="productInfo"></div>
+                <div class="reviews-section">
+                    <h4>Customer Reviews</h4>
+                    <div id="reviewsList"></div>
+                    <div class="add-review">
+                        <h5>Add a Review</h5>
+                        <form id="reviewForm" onsubmit="addReview(event)">
+                            <div class="form-group">
+                                <label for="reviewAuthor">Your Name:</label>
+                                <input type="text" id="reviewAuthor" value="Anonymous">
+                            </div>
+                            <div class="form-group">
+                                <label for="reviewText">Review:</label>
+                                <textarea id="reviewText" rows="3" required></textarea>
+                            </div>
+                            <button type="submit" class="btn">Add Review</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Attack Testing Panel (for security researchers) -->
+    <div id="attackPanel" class="attack-panel" style="display: none;">
+        <h4>🎯 Attack Testing Panel</h4>
+        <div class="attack-buttons">
+            <button onclick="testAttack1()" class="attack-btn">Test Attack 1: SQL Injection</button>
+            <button onclick="testAttack2()" class="attack-btn">Test Attack 2: Command Injection</button>
+            <button onclick="testAttack3()" class="attack-btn">Test Attack 3: Indirect Prompt Injection</button>
+            <button onclick="resetEnvironment()" class="reset-btn">Reset Environment</button>
+        </div>
+        <div id="attackResults" class="attack-results"></div>
+    </div>
+
+    <!-- Toggle Attack Panel Button -->
+    <button id="toggleAttackPanel" onclick="toggleAttackPanel()" class="toggle-btn">🔧 Security Research</button>
+
+    <script src="app_unified.js"></script>
+</body>
+</html>

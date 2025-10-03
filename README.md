@@ -173,23 +173,32 @@ chmod +x scripts/debug_env.sh
                         │ 2. Cmd Injection│
                         │ 3. Prompt Inject│
                         └─────────────────┘
+```
 
-Project Structure:
-├── README.md              # Main documentation
-├── LICENSE               # Educational use license
-├── .env.example         # Environment template
-├── scripts/             # Setup and startup scripts
-│   ├── setup.sh         # Unix/Linux setup
-│   ├── setup_windows.bat # Windows setup
-│   ├── start_all.sh     # Unix/Linux startup
-│   ├── start_windows.bat # Windows startup
-│   └── debug_env.sh     # Environment debugging
-├── docs/                # Documentation
-│   ├── DEPLOYMENT_GUIDE.md
-│   ├── SECURITY.md
-│   └── QUICKSTART.md
-├── backend/             # Python Flask API
-└── frontend/            # React application
+### 📁 Clean Project Structure
+```
+autoelite-llm-security-demo/
+├── 📄 README.md              # Main documentation
+├── 📄 LICENSE               # Educational use license  
+├── 📄 .env.example         # Environment template
+├── 📁 scripts/             # 🚀 Setup & startup scripts
+│   ├── setup.sh           # Unix/Linux setup
+│   ├── setup_windows.bat  # Windows setup
+│   ├── start_all.sh       # Unix/Linux startup
+│   ├── start_windows.bat  # Windows startup
+│   └── debug_env.sh       # Environment debugging
+├── 📁 docs/               # 📚 Documentation
+│   ├── QUICKSTART.md      # 5-minute setup guide
+│   ├── DEPLOYMENT_GUIDE.md # Detailed instructions
+│   └── SECURITY.md        # Security warnings
+├── 📁 backend/            # 🐍 Python Flask API
+│   ├── server_unified.py  # Main server
+│   ├── data_stores.py     # Mock data
+│   └── requirements.txt   # Dependencies
+└── 📁 frontend/           # ⚛️ React application
+    ├── src/               # Source code
+    ├── package.json       # Dependencies
+    └── vite.config.js     # Build configuration
 ```
 
 ### Key Components

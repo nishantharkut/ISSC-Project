@@ -370,11 +370,12 @@ htmlcov/
 !.env.example
 !config.example.json
 
-# Keep documentation
+# Keep documentation and scripts
 !README.md
 !LICENSE
-!SECURITY.md
 !docs/
+!scripts/
+!SECURITY.md
 
 # Educational disclaimer
 !EDUCATIONAL_USE_ONLY.md

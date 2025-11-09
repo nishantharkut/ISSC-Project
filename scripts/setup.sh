@@ -86,6 +86,22 @@ main() {
     echo "=========================================="
     echo -e "${NC}"
 
+    # Navigate to project root if we're in the scripts directory
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    if [ "$(basename "$SCRIPT_DIR")" = "scripts" ]; then
+        print_status "Navigating to project root..."
+        cd "$SCRIPT_DIR/.."
+    fi
+    
+    # Check if we're in the right directory
+    if [ ! -f "README.md" ] || [ ! -d "backend" ] || [ ! -d "frontend" ]; then
+        print_error "Cannot find project root directory"
+        print_error "Make sure you have backend/ and frontend/ directories"
+        exit 1
+    fi
+    
+    print_success "Working directory: $(pwd)"
+
     # Check prerequisites
     print_status "Checking prerequisites..."
     check_python
@@ -110,20 +126,20 @@ main() {
 
     echo "All prerequisites met!"
 
-    # Create .env file if it doesn't exist
+    # Create .env file in backend folder if it doesn't exist
     print_status "Setting up environment configuration..."
-    if [ ! -f ".env" ]; then
-        if [ -f ".env.example" ]; then
-            cp .env.example .env
-            print_warning "Created .env file from template"
-            print_warning "IMPORTANT: Edit .env and add your Gemini API key!"
+    if [ ! -f "backend/.env" ]; then
+        if [ -f "backend/.env.example" ]; then
+            cp backend/.env.example backend/.env
+            print_warning "Created backend/.env file from template"
+            print_warning "IMPORTANT: Edit backend/.env and add your Gemini API key!"
             print_warning "   Get your API key from: https://aistudio.google.com/app/apikey"
         else
-            print_error ".env.example not found. Please ensure you're in the project root directory."
+            print_error "backend/.env.example not found"
             exit 1
         fi
     else
-        print_success ".env file already exists"
+        print_success "backend/.env file already exists"
     fi
 
     # Setup backend
@@ -192,9 +208,9 @@ main() {
     print_status "Verifying setup..."
     
     # Check if .env has API key
-    if grep -q "your_gemini_api_key_here" .env 2>/dev/null; then
-        print_warning "API key not configured in .env file"
-        print_warning "   Please edit .env and replace 'your_gemini_api_key_here' with your actual API key"
+    if grep -q "your_gemini_api_key_here" backend/.env 2>/dev/null; then
+        print_warning "API key not configured in backend/.env file"
+        print_warning "   Please edit backend/.env and replace 'your_gemini_api_key_here' with your actual API key"
         print_warning "   Get your API key from: https://aistudio.google.com/app/apikey"
     else
         print_success "API key appears to be configured"
@@ -212,8 +228,8 @@ main() {
     echo "Attack scenarios: SQL, Command, Prompt Injection"
     echo ""
     echo -e "${YELLOW}Next steps:${NC}"
-    echo "1. Make sure your API key is set in .env file"
-    echo "2. Run: ${GREEN}./start_all.sh${NC} to start both servers"
+    echo "1. Make sure your API key is set in backend/.env file"
+    echo "2. Run: ${GREEN}./scripts/start_all.sh${NC} to start both servers"
     echo "3. Open: ${BLUE}http://localhost:5173${NC} in your browser"
     echo "4. Start learning about LLM security!"
     echo ""
@@ -225,13 +241,6 @@ main() {
     echo ""
     echo -e "${GREEN}Happy learning!${NC}"
 }
-
-# Check if we're in the right directory
-if [ ! -f "README.md" ] || [ ! -d "backend" ] || [ ! -d "frontend" ]; then
-    print_error "Please run this script from the project root directory"
-    print_error "Make sure you have backend/ and frontend/ directories"
-    exit 1
-fi
 
 # Run main setup
 main

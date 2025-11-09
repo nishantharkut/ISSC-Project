@@ -11,18 +11,21 @@ This directory contains all setup and utility scripts for the AutoElite Motors S
   - Installs all dependencies
   - Configures environment
   - Verifies installation
+  - **Can be run from anywhere** - automatically finds project root
 
 - **`start_all.sh`** - Starts both backend and frontend servers
   - Activates virtual environment
   - Launches Flask backend on port 5000
   - Launches Vite frontend on port 5173
   - Monitors both processes
+  - **Can be run from anywhere** - automatically finds project root
 
 - **`debug_env.sh`** - Diagnoses environment issues
   - Checks Python installation
   - Verifies virtual environment
   - Lists installed packages
   - Validates configuration
+  - **Can be run from anywhere** - automatically finds project root
 
 ### Windows (Command Prompt/PowerShell)
 
@@ -30,20 +33,32 @@ This directory contains all setup and utility scripts for the AutoElite Motors S
   - Same functionality as setup.sh but for Windows
   - Uses Windows batch commands
   - Creates .venv virtual environment
+  - **Can be run from anywhere** - automatically finds project root
 
-- **`start_windows.bat`** - Windows startup script
+- **`start_all.bat`** - Windows startup script (recommended)
   - Launches both servers in separate windows
   - Uses Windows-native commands
   - Provides visual feedback
+  - **Can be run from anywhere** - automatically finds project root
 
-## Legacy Scripts (Deprecated)
+- **`start_windows.bat`** - Alternative Windows startup script
+  - Same functionality as start_all.bat
+  - Different UI style
+  - **Can be run from anywhere** - automatically finds project root
 
-These scripts are kept for compatibility but are no longer actively maintained:
+## Individual Server Scripts
 
-- `start_all.bat` - Old Windows batch file
-- `start_backend.bat` - Backend-only Windows script
-- `start_frontend.bat` - Frontend-only Windows script
-- `system_check.bat` - Old system verification script
+For advanced users who want to run servers separately:
+
+- **`start_backend.bat`** - Backend-only Windows script
+- **`start_frontend.bat`** - Frontend-only Windows script
+- **`system_check.bat`** - System verification script
+
+All batch files automatically navigate to the project root when run from the scripts folder.
+
+## Legacy Scripts (Note)
+
+All scripts have been updated to work from anywhere. The designation "legacy" no longer applies - all scripts are actively maintained and production-ready.
 
 ## Usage
 
@@ -98,7 +113,8 @@ npm run dev
 
 - **Script Permissions**: Unix scripts may need execute permissions (`chmod +x`)
 - **Virtual Environment**: Scripts automatically handle virtual environment activation
-- **Path Dependencies**: Run scripts from the project root directory
+- **Flexible Execution**: All scripts can be run from the project root OR from the scripts directory
+- **Automatic Navigation**: Scripts detect their location and navigate to project root automatically
 - **API Keys**: Ensure `.env` file is configured before starting services
 
 ## Common Issues

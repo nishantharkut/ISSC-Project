@@ -238,23 +238,32 @@ main() {
     echo "=========================================="
     echo -e "${NC}"
     
+    # Navigate to project root if we're in the scripts directory
+    SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+    if [ "$(basename "$SCRIPT_DIR")" = "scripts" ]; then
+        print_status "Navigating to project root..."
+        cd "$SCRIPT_DIR/.."
+    fi
+    
     # Check if we're in the right directory
     if [ ! -f "README.md" ] || [ ! -d "backend" ] || [ ! -d "frontend" ]; then
-        print_error "Please run this script from the project root directory"
+        print_error "Cannot find project root directory"
         print_error "Make sure you have backend/ and frontend/ directories"
         exit 1
     fi
     
+    print_success "Working directory: $(pwd)"
+    
     # Check if .env file exists and has API key
-    if [ ! -f ".env" ]; then
-        print_error ".env file not found"
-        print_error "Please run ./setup.sh first to create the environment file"
+    if [ ! -f "backend/.env" ]; then
+        print_error "backend/.env file not found"
+        print_error "Please run ./scripts/setup.sh first to create the environment file"
         exit 1
     fi
     
-    if grep -q "your_gemini_api_key_here" .env 2>/dev/null; then
-        print_warning "API key not configured in .env file"
-        print_warning "   Please edit .env and replace 'your_gemini_api_key_here' with your actual API key"
+    if grep -q "your_gemini_api_key_here" backend/.env 2>/dev/null; then
+        print_warning "API key not configured in backend/.env file"
+        print_warning "   Please edit backend/.env and replace 'your_gemini_api_key_here' with your actual API key"
         print_warning "   Get your API key from: https://aistudio.google.com/app/apikey"
         echo ""
         read -p "Continue anyway? (y/N): " -n 1 -r

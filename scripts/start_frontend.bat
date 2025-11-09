@@ -1,7 +1,12 @@
 @echo off
+REM Navigate to project root (one level up from scripts folder)
+cd /d "%~dp0.."
+
 echo ============================================================
 echo   AutoElite Motors - Starting Frontend Server (React + Vite)
 echo ============================================================
+echo.
+echo Current directory: %CD%
 echo.
 
 cd frontend

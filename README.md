@@ -56,9 +56,9 @@ This project showcases three critical LLM security vulnerabilities:
 
 3. **Configure API Key**
    ```bash
-   # Create .env file
-   cp .env.example .env
-   # Edit .env and add your Gemini API key:
+   # Create .env file in backend folder
+   cp backend/.env.example backend/.env
+   # Edit backend/.env and add your Gemini API key:
    API_KEY=your_gemini_api_key_here
    ```
 
@@ -180,7 +180,6 @@ chmod +x scripts/debug_env.sh
 autoelite-llm-security-demo/
 ├── README.md              # Main documentation
 ├── LICENSE               # Educational use license  
-├── .env.example         # Environment template
 ├── scripts/             # Setup & startup scripts
 │   ├── setup.sh           # Unix/Linux setup
 │   ├── setup_windows.bat  # Windows setup
@@ -191,6 +190,12 @@ autoelite-llm-security-demo/
 │   ├── QUICKSTART.md      # 5-minute setup guide
 │   ├── DEPLOYMENT_GUIDE.md # Detailed instructions
 │   └── SECURITY.md        # Security warnings
+├── backend/            # Python Flask server
+│   ├── .env.example       # Environment template  
+│   ├── .env               # Your API key (create this)
+│   ├── server_unified.py  # Main server
+│   ├── data_stores.py     # Database & file system
+│   └── requirements.txt   # Python dependencies
 ├── backend/            # Python Flask API
 │   ├── server_unified.py  # Main server
 │   ├── data_stores.py     # Mock data
@@ -474,7 +479,7 @@ python --version  # Should be 3.8+
 pip install -r requirements.txt
 
 # Check API key
-cat .env  # Should contain: API_KEY=your_key_here
+cat backend/.env  # Should contain: API_KEY=your_key_here
 ```
 
 **Frontend won't start:**

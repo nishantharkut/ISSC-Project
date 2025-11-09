@@ -1,35 +1,29 @@
 @echo off
+REM Navigate to project root (one level up from scripts folder)
+cd /d "%~dp0.."
+
 echo ========================================
 echo   AutoElite Motors Security Lab Setup
-echoecho Backend: Python + Flask + Gemini AI
-echo Frontend: React + Vite + Tailwind CSS
-echo Attack scenarios: SQL, Command, Prompt Injection
-echo.
-echo Next steps:
-echo 1. Make sure your API key is set in .env file
-echo 2. Run: scripts\start_windows.bat to start both servers
-echo 3. Open: http://localhost:5173 in your browser
-echo 4. Start learning about LLM security!
-echo.
-echo Educational Use Only
-echo This contains intentional vulnerabilities for learning purposes.
-echo Never use in production or for malicious purposes.tional Use Only
+echo        Educational Use Only
 echo ========================================
 
 :: Check if we're in the right directory
 if not exist "backend\" (
     echo ERROR: backend directory not found
-    echo Please run this script from the project root directory
+    echo Cannot find project root directory
     pause
     exit /b 1
 )
 
 if not exist "frontend\" (
     echo ERROR: frontend directory not found
-    echo Please run this script from the project root directory
+    echo Cannot find project root directory
     pause
     exit /b 1
 )
+
+echo Current directory: %CD%
+echo.
 
 :: Check for Python
 python --version >nul 2>&1
@@ -51,20 +45,20 @@ if errorlevel 1 (
 
 echo Python and Node.js found!
 
-:: Create .env file if it doesn't exist
-if not exist ".env" (
-    if exist ".env.example" (
-        copy ".env.example" ".env" >nul
-        echo Created .env file from template
-        echo IMPORTANT: Edit .env and add your Gemini API key!
+:: Create .env file in backend folder if it doesn't exist
+if not exist "backend\.env" (
+    if exist "backend\.env.example" (
+        copy "backend\.env.example" "backend\.env" >nul
+        echo Created backend\.env file from template
+        echo IMPORTANT: Edit backend\.env and add your Gemini API key!
         echo Get your API key from: https://aistudio.google.com/app/apikey
     ) else (
-        echo ERROR: .env.example not found
+        echo ERROR: backend\.env.example not found
         pause
         exit /b 1
     )
 ) else (
-    echo .env file already exists
+    echo backend\.env file already exists
 )
 
 :: Setup backend
@@ -121,8 +115,8 @@ echo Frontend: React + Vite + Tailwind CSS
 echo Attack scenarios: SQL, Command, Prompt Injection
 echo.
 echo Next steps:
-echo 1. Make sure your API key is set in .env file
-echo 2. Run: start_windows.bat to start both servers
+echo 1. Make sure your API key is set in backend\.env file
+echo 2. Run: scripts\start_all.bat to start both servers
 echo 3. Open: http://localhost:5173 in your browser
 echo 4. Start learning about LLM security!
 echo.

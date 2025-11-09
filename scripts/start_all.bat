@@ -1,4 +1,7 @@
 @echo off
+REM Navigate to project root (one level up from scripts folder)
+cd /d "%~dp0.."
+
 echo ============================================================
 echo   AutoElite Motors - Starting Complete System
 echo ============================================================
@@ -9,16 +12,18 @@ echo 2. Frontend Server (React + Vite) on port 5173
 echo.
 echo Two command windows will open - keep both running!
 echo.
+echo Current directory: %CD%
+echo.
 pause
 
 echo Starting Backend Server...
-start "AutoElite Backend" cmd /k "cd backend && if exist .venv\Scripts\activate.bat (call .venv\Scripts\activate.bat && python server_unified.py) else if exist .venv\bin\python.exe (.venv\bin\python.exe server_unified.py) else (python server_unified.py)"
+start "AutoElite Backend" cmd /k "cd /d "%CD%\backend" && if exist .venv\Scripts\activate.bat (call .venv\Scripts\activate.bat && python server_unified.py) else if exist .venv\bin\python.exe (.venv\bin\python.exe server_unified.py) else (python server_unified.py)"
 
 echo Waiting 3 seconds for backend to initialize...
 timeout /t 3 /nobreak > nul
 
 echo Starting Frontend Server...
-start "AutoElite Frontend" cmd /k "cd frontend && npm run dev"
+start "AutoElite Frontend" cmd /k "cd /d "%CD%\frontend" && npm run dev"
 
 echo.
 echo [SUCCESS] Both servers are starting!

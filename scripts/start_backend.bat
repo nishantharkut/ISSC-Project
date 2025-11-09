@@ -1,7 +1,12 @@
 @echo off
+REM Navigate to project root (one level up from scripts folder)
+cd /d "%~dp0.."
+
 echo ============================================================
 echo   AutoElite Motors - Starting Backend Server (Flask + Gemini AI)
 echo ============================================================
+echo.
+echo Current directory: %CD%
 echo.
 
 cd backend

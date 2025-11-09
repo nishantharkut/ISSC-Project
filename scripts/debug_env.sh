@@ -34,11 +34,21 @@ echo "  Python Environment Diagnostic"
 echo "=========================================="
 echo -e "${NC}"
 
+# Navigate to project root if we're in the scripts directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+if [ "$(basename "$SCRIPT_DIR")" = "scripts" ]; then
+    print_status "Navigating to project root..."
+    cd "$SCRIPT_DIR/.."
+fi
+
 # Check if we're in the right directory
 if [ ! -d "backend" ]; then
-    print_error "Please run this script from the project root directory"
+    print_error "Cannot find backend directory"
+    print_error "Make sure you're in the project root"
     exit 1
 fi
+
+print_success "Working directory: $(pwd)"
 
 cd backend
 
@@ -168,21 +178,21 @@ fi
 # Check .env file
 cd ..
 print_status "Checking .env configuration..."
-if [ -f ".env" ]; then
-    print_success ".env file exists"
-    if grep -q "API_KEY=" .env; then
-        if grep -q "your_gemini_api_key_here" .env; then
+if [ -f "backend/.env" ]; then
+    print_success "backend/.env file exists"
+    if grep -q "API_KEY=" backend/.env; then
+        if grep -q "your_gemini_api_key_here" backend/.env; then
             print_warning "API key not configured (still using placeholder)"
         else
             print_success "API key appears to be configured"
         fi
     else
-        print_error "API_KEY not found in .env file"
+        print_error "API_KEY not found in backend/.env file"
     fi
 else
-    print_error ".env file not found"
-    if [ -f ".env.example" ]; then
-        print_status "To create .env file: cp .env.example .env"
+    print_error "backend/.env file not found"
+    if [ -f "backend/.env.example" ]; then
+        print_status "To create .env file: cp backend/.env.example backend/.env"
     fi
 fi
 
@@ -193,8 +203,8 @@ echo "==========================================${NC}"
 
 if [[ "$VIRTUAL_ENV" != "" ]]; then
     echo -e "${GREEN}✓ Virtual environment is working${NC}"
-    echo "You should be able to run: ./start_all.sh"
+    echo "You should be able to run: ./scripts/start_all.sh"
 else
     echo -e "${RED}✗ Virtual environment issues detected${NC}"
-    echo "Please run: ./setup.sh to fix the environment"
+    echo "Please run: ./scripts/setup.sh to fix the environment"
 fi
